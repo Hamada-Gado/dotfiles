@@ -19,20 +19,8 @@ scrolling:
 
 font:
   normal:
-    family: DejaVuSansMNerdFont
+    family: CaskaydiaMonoNerdFont
     style: Regular
-
-  bold:
-    family: DejaVuSansMNerdFont
-    style: Bold
-
-  italic:
-    family: DejaVuSansMNerdFont
-    style: Italic
-
-  bold_italic:
-    family: DejaVuSansMNerdFont
-    style: Bold Italic
 
   size: 12.0
 
