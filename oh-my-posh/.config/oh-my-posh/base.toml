@@ -1,0 +1,90 @@
+console_title_template = "{{ .Shell }} in {{ .Folder }}"
+version = 3
+final_space = true
+
+[palette]
+  turquoise = "#56b6c2"
+  orange = "#d19a66"
+  purple = "#c678dd"
+  hotpink = "#e06c75"
+  limegreen = "#98c379"
+  red = "#e06c75"
+
+[[blocks]]
+  type = "prompt"
+  alignment = "left"
+  newline = true
+
+  [[blocks.segments]]
+    type = "python"
+    style = "plain"
+    template = "({{ .Venv }}) "
+
+  [[blocks.segments]]
+    type = "session"
+    style = "plain"
+    foreground = "p:purple"
+    template = "{{ .UserName }}"
+
+  [[blocks.segments]]
+    type = "text"
+    style = "plain"
+    template = " in "
+
+  [[blocks.segments]]
+    type = "path"
+    style = "plain"
+    foreground = "p:limegreen"
+    template = "{{ .Path }}"
+
+    [blocks.segments.properties]
+      style = "folder"
+
+  [[blocks.segments]]
+    type = "git"
+    style = "plain"
+    template = " on "
+
+
+  [[blocks.segments]]
+    type = "git"
+    style = "plain"
+    foreground = "p:turquoise"
+    template = "{{ .HEAD }}<p:orange>{{ if gt (add .Working.Deleted .Working.Added .Working.Modified .Working.Unmerged) 0 }} ●{{ end }}<p:limegreen>{{ if .Staging.Changed }} ●{{ end }}<p:hotpink>{{ if .Working.Untracked }} ●{{ end }}</>"
+
+    [blocks.segments.properties]
+      branch_icon = ""
+      fetch_status = true
+
+[[blocks]]
+  type = 'rprompt'
+  overflow = 'hidden'
+
+  [[blocks.segments]]
+    type = 'executiontime'
+    style = 'plain'
+    foreground = 'yellow'
+    background = 'transparent'
+    template = '{{ .FormattedMs }}'
+
+    [blocks.segments.properties]
+      threshold = 5000
+
+[[blocks]]
+  type = "prompt"
+  alignment = "left"
+  newline = true
+
+  [[blocks.segments]]
+    type = "text"
+    style = "plain"
+    foreground = "p:orange"
+    template = "λ"
+
+[transient_prompt]
+  foreground = "p:orange"
+  template = "λ "
+
+[secondary_prompt]
+  foreground = 'p:orange'
+  template = 'λλ '
