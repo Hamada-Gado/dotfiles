@@ -16,12 +16,12 @@ This file is used to configure ZSH with the following tools:
   - fzf-tab
 
 This file is divided into the following sections:
-  1. Oh My Posh
-  2. Dependencies
-  3. Settings
-  4. ZINIT (Plugin Manager)
-  5. Aliases & Functions
-  6. Exports
+  1. Exports
+  2. Oh My Posh
+  3. Dependencies
+  4. Settings
+  5. ZINIT (Plugin Manager)
+  6. Aliases & Functions
   7. Source startup.zsh (Personal startup file)
 
 Enjoy your ZSH configuration! 🚀
@@ -36,12 +36,26 @@ To profile zsh startup time, add the following commands to the start and end of 
 '
 #############################################################################
 
+
+#### Exports ####
+# so that executables can be found and installed
+export PATH=$PATH:/home/ahmedgado/.local/bin
+
+# my fortune
+export MY_FORTUNE
+
+# make neovim default editor
+export EDITOR="nv"
+export VISUAL="nv"
+
+
 #### Oh My Posh ####
 if ! command -v oh-my-posh &> /dev/null; then
   curl -s https://ohmyposh.dev/install.sh | bash -s
 fi
 
 eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/base.toml)"
+
 
 #### Dependencies ####
 ## Zinit (Plugin Manager)
@@ -88,6 +102,7 @@ if ! command -v eza &> /dev/null; then
   sudo mv eza /usr/local/bin/eza
 fi
 
+
 #### Settings ####
 
 # History
@@ -133,6 +148,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --color=always $realpat
 ## Zinit completion stuff
 zinit cdreplay -q
 
+
 #### Aliases & Functions ####
 # shell stuff
 alias ..='cd ..'
@@ -160,14 +176,6 @@ function activ {
 alias gccrn='() {gcc $1.c -o $1 && ./$1}'
 alias g++rn='() {g++ $1.cpp -o $1 && ./$1}'
 
-
-#### Exports ####
-# my fortune
-export MY_FORTUNE
-
-# make neovim default editor
-export EDITOR="nv"
-export VISUAL="nv"
 
 #### Source startup.zsh ####
 # source the startup file if it exists
