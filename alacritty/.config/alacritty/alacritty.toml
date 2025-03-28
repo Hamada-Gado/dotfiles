@@ -1,0 +1,77 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "T"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+key = "O"
+mods = "Control"
+
+[keyboard.bindings.command]
+args = ["-c", "~/.config/alacritty/toggle_opacity.sh"]
+program = "/bin/sh"
+
+[general]
+live_config_reload = true
+
+[terminal]
+
+[colors.bright]
+black = "#414868"
+blue = "#7aa2f7"
+cyan = "#7dcfff"
+green = "#9ece6a"
+magenta = "#bb9af7"
+red = "#f7768e"
+white = "#c0caf5"
+yellow = "#e0af68"
+
+[colors.normal]
+black = "#1d202f"
+blue = "#7aa2f7"
+cyan = "#7dcfff"
+green = "#9ece6a"
+magenta = "#bb9af7"
+red = "#f7768e"
+white = "#a9b1d6"
+yellow = "#e0af68"
+
+[colors.primary]
+background = "#24283b"
+foreground = "#c0caf5"
+
+[cursor.style]
+blinking = "Off"
+shape = "Block"
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "CaskaydiaMonoNerdFont"
+style = "Regular"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[terminal.shell]
+program = "/bin/zsh"
+
+[window]
+decorations = "none"
+dynamic_padding = true
+opacity = 0.88
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 5
+y = 5
+
+[keyboard]
