@@ -22,7 +22,7 @@ This file is divided into the following sections:
   4. Settings
   5. ZINIT (Plugin Manager)
   6. Aliases & Functions
-  7. Source startup.zsh (Personal startup file)
+  7. Source local zshrc
 
 Enjoy your ZSH configuration! 🚀
 '
@@ -40,9 +40,6 @@ To profile zsh startup time, add the following commands to the start and end of 
 #### Exports ####
 # so that executables can be found and installed
 export PATH=$PATH:/home/ahmedgado/.local/bin
-
-# my fortune
-export MY_FORTUNE
 
 # make neovim default editor
 export EDITOR="nv"
@@ -156,7 +153,7 @@ alias ..='cd ..'
 # ls stuff
 alias ls='eza'
 alias l='eza -l'
-alias ll='eza -lah'
+alias la='eza -la'
 
 # make tmux colorful
 alias tmux='TERM=xterm-256color tmux'
@@ -177,6 +174,6 @@ alias gccrn='() {gcc $1.c -o $1 && ./$1}'
 alias g++rn='() {g++ $1.cpp -o $1 && ./$1}'
 
 
-#### Source startup.zsh ####
+#### Source local zshrc ####
 # source the startup file if it exists
-[ -f ~/startup.zsh ] && source ~/startup.zsh
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
