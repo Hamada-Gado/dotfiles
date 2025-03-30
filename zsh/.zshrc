@@ -160,7 +160,6 @@ alias tmux='TERM=xterm-256color tmux'
 
 # python
 alias py='python3'
-alias pip='py -m pip'
 function activ {
   if [[ -z "$1" ]]; then
     source .venv/bin/activate
