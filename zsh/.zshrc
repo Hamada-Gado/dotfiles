@@ -163,7 +163,7 @@ alias py='python3'
 alias pip='py -m pip'
 function activ {
   if [[ -z "$1" ]]; then
-    source venv/bin/activate
+    source .venv/bin/activate
   else
     source $1/bin/activate
   fi
