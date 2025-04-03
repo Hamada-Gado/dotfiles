@@ -20,6 +20,9 @@ final_space = true
     style = "plain"
     template = "({{ .Venv }}) "
 
+    [blocks.segments.properties]
+      home_enabled = true
+
   [[blocks.segments]]
     type = "session"
     style = "plain"
